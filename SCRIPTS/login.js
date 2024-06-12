@@ -43,7 +43,7 @@ async function login() {
     });
 
     const data = await response.json();
-    const { access_token, refresh_token } = data; // {}
+    const { access_token, refresh_token } = data; 
 
     sessionStorage.setItem("access_token", access_token);
     localStorage.setItem("refresh_token", refresh_token);

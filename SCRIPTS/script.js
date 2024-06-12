@@ -44,8 +44,7 @@ function createCard() {
     productName.value = '';
     productPrice.value = '';
     productDescription.value = '';
-
-    productArray.push(newProduct);
+    productArray.map(el => el).push(newProduct);
     productList.append(productCard);
 
     const deleteButton = productCard.querySelector(".delete-btn");
