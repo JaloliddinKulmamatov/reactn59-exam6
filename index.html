@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script type="module" src="/scripts/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">Admin</a></li>
+                    <li><a href="/login.html">Login</a></li>
+                </ul>
+            </nav>
+
+            <button id="log-btn">Sign Out</button>
+        </header>
+
+        <main>
+            <h1>Admin Page</h1>
+            <h2>Add New Product</h2>
+            <div id="product-app">
+                <form>
+                    <div class="input-group">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" name="product-name" id="product-name">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="product-price">Product Price</label>
+                        <input type="number" name="product-price" id="product-price">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="product-description">Product Description</label>
+                        <textarea rows="5" name="product-description" id="product-description"></textarea>
+                    </div>
+
+                    <button id="add-product-btn" type="submit">Add Product</button>
+                </form>
+                <div id="product-list"></div>
+            </div>
+        </main>
+
+        <footer>&copy; 2024</footer>
+    </div>
+</body>
+
+</html>

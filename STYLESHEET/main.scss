@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical; 
+}
+
+.container {
+    background: transparent;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 900px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.navbar {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        li {
+            margin-right: 25px;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 500;
+                transition: color 0.3s ;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+#log-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff7e5f;
+    color: #fff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+main {
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+            color: #fff;
+;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+        color: #fff;
+    }
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            border-color: #ff7e5f;
+        }
+    }
+}
+
+#add-product-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff7e5f;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: #feb47b;
+        transform: scale(1.05);
+    }
+}
+
+#product-list {
+    margin-top: 25px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-card p {
+    margin: 5px 0;
+    color: #ff7e5f;
+}
+
+.product-card button.delete-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff7e5f;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #feb47b;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        ul {
+            flex-direction: column;
+
+            li {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    main {
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .input-group {
+
+        input,
+        textarea {
+            font-size: 0.9rem;
+        }
+    }
+
+    #add-product-btn {
+        font-size: 0.9rem;
+    }
+}
