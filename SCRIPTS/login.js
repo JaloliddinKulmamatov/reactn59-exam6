@@ -9,29 +9,35 @@ window.addEventListener("DOMContentLoaded", function () {
   if (hasToken) {
     redirect("/index.html");
   }
+
+  const credentials = {
+    email: emailInput ? emailInput.value : '',
+    password: passwordInput ? passwordInput.value : '',
+  };
+
+  if (emailInput) {
+    emailInput.oninput = function (event) {
+      credentials.email = event.target.value;
+      console.log(credentials);
+    };
+  }
+
+  if (passwordInput) {
+    passwordInput.oninput = function (event) {
+      credentials.password = event.target.value;
+      console.log(credentials);
+    };
+  }
+
+  if (form) {
+   form.onsubmit = async function (event) {
+      event.preventDefault();
+      login(credentials);
+    };
+  }
 });
 
-const credentials = {
-  email: emailInput.value,
-  password: passwordInput.value,
-};
-
-emailInput.oninput = function (event) {
-  credentials.email = event.target.value;
-  console.log(credentials);
-};
-
-passwordInput.oninput = function (event) {
-  credentials.password = event.target.value;
-  console.log(credentials);
-};
-
-form.onsubmit = function (event) {
-  event.preventDefault();
-  login();
-};
-
-async function login() {
+async function login(credentials) {
   const api_url = "https://api.escuelajs.co/api/v1/auth/login";
   try {
     const response = await fetch(api_url, {
@@ -43,15 +49,19 @@ async function login() {
     });
 
     const data = await response.json();
-    const { access_token, refresh_token } = data; 
 
-    sessionStorage.setItem("access_token", access_token);
-    localStorage.setItem("refresh_token", refresh_token);
-
-    const hasToken = checkToken();
-    if (hasToken) {
-      redirect("/index.html");
+    if (data.statusCode === 401) {
+      alert('Login or password is incorrect');
+    } else {
+      const hasToken = checkToken();
+      const { access_token, refresh_token } = data;
+      sessionStorage.setItem("access_token", access_token);
+      localStorage.setItem("refresh_token", refresh_token);
+      if (hasToken) {
+        redirect("/index.html");
+      }
     }
   } catch (error) {
-    console.error;
-  }}
+    console.error('Error during login:', error);
+  }
+}

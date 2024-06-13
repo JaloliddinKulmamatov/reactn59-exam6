@@ -5,34 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/login.min.css">
-    <script type="module" src="/scripts/login.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <script type="module" src="./scripts/login.js"></script>
 </head>
 
 <body>
-    <div class="main-wrapper">
+    <div class="container">
         <main>
             <h1>Login page</h1>
-            <div id="app">
+            <div id="login-app">
                 <form>
-                    <div class="form-control">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                    <div class="input-group">
+                        <label for="email">email</label>
+                        <input required type="email" name="email" id="email">
                     </div>
 
-                    <div class="form-control">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
+                    <div class="input-group">
+                        <label for="password">password</label>
+                        <input required type="password" name="password" id="password">
                     </div>
 
-                    <button type="submit">Login</button>
+                    <button class="submit-btn" type="submit">Login</button>
                 </form>
             </div>
         </main>
-
-        <footer>copyright &copy; 2024</footer>
     </div>
 </body>
 
 </html>
-
