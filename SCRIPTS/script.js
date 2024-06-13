@@ -15,6 +15,7 @@
         });
 
         logOutButton.onclick = logout;
+        let productArray = []
 
         const form = document.forms[0];
         form.onsubmit = function(event) {
